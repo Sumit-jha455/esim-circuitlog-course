@@ -1,0 +1,9 @@
+* CircuitLog_Chapter1_Decision (eSim netlist via kicad-cli kicadxml)
+* Sheet Name: /
+u1 net__u1_password0 net__u1_authorized0 unlock door_lock
+u2 net__u2_in1 net__u1_password0 adc_bridge_1
+u3 net__u3_in1 net__u1_authorized0 adc_bridge_1
+u4 unlock unlock_out dac_bridge_1
+v1 net__u2_in1 0 pulse
+v2 net__u3_in1 0 pulse
+.end

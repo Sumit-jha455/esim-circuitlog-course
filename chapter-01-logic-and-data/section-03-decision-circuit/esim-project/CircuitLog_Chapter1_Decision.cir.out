@@ -1,0 +1,32 @@
+* circuitlog_chapter1_decision (esim netlist via kicad-cli kicadxml)
+
+* u1 net__u1_password0 net__u1_authorized0 unlock door_lock
+* u2 net__u2_in1 net__u1_password0 adc_bridge_1
+* u3 net__u3_in1 net__u1_authorized0 adc_bridge_1
+* u4 unlock unlock_out dac_bridge_1
+v1 net__u2_in1 0 pulse(0 5 0 1e-9 1e-9 5e-3 1e-2)
+v2 net__u3_in1 0 pulse(0 5 2.5e-3 1e-9 1e-9 5e-3 1e-2)
+a1 [net__u1_password0 ] [net__u1_authorized0 ] [unlock ] u1
+a2 [net__u2_in1 ] [net__u1_password0 ] u2
+a3 [net__u3_in1 ] [net__u1_authorized0 ] u3
+a4 [unlock ] [unlock_out ] u4
+* Schematic Name:                             door_lock, Ngspice Name: door_lock
+.model u1 door_lock(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             adc_bridge_1, Ngspice Name: adc_bridge
+.model u2 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             adc_bridge_1, Ngspice Name: adc_bridge
+.model u3 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, Ngspice Name: dac_bridge
+.model u4 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+.tran 10e-06 10e-03 0e-00
+
+* Control Statements 
+.control
+set width=1000
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+set filetype=ascii
+write plot_data.raw
+.endc
+.end

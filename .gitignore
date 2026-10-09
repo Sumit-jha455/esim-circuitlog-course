@@ -1,0 +1,13 @@
+﻿# Local eSim workspace backup; curated files are stored separately
+/esim-WorkSpace/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary simulation and generated files
+*.log
+*.tmp
