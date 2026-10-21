@@ -1,4 +1,4 @@
-﻿# Section 3 — Building Logic for Decisions
+﻿# Section 1 — Building Logic for Decisions
 
 ## Objective
 
@@ -41,3 +41,4 @@ Open the project in a compatible eSim installation. Review the schematic and mod
 ## Status
 
 Initial implementation and simulation evidence are collected. Final video assembly and packaging remain pending.
+

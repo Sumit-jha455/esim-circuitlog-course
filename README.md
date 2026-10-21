@@ -5,7 +5,7 @@ Course development repository for **µP PRARAMBH – The Circuit Log**.
 ## Current Work
 
 **Chapter 1: Logic & Data**  
-**Section 3: Building Logic for Decisions**
+**Section 1: Building Logic for Decisions**
 
 ### Project: Digital Door Lock
 
@@ -52,3 +52,4 @@ Refer to the README inside the relevant section for project-specific instruction
 ## Notes
 
 This repository is intended to organize course source files, evidence, documentation, and learning materials. Follow the mentor's instructions for official submissions.
+
